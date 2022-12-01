@@ -18,6 +18,28 @@ metars = [
 ]
 
 
+def search_list_strings(list_strings, pattern) -> None:
+    """Iterates through a list of strings searching for the pattern.
+    pattern should be a non compiled regex raw string. Prints the full
+    string if the pattern is found in the string. A list compreshension
+    is also shown.
+
+    Example call:
+        search_list_strings(metars, r"KORD\s")
+
+    parameters:
+        list_strings: list[str]: List of strings to search
+        pattern r[str]: raw stirng to search for
+    """
+    pattern = re.compile(pattern)
+
+    for string in list_strings:
+        if re.search(pattern, string):
+            print(string)
+
+    [print(string) for string in list_strings if re.search(pattern, string)]
+
+
 def main():
     # compiles the regex KORD with a single space at the end
     station_ord = re.compile(r"KORD\s")
