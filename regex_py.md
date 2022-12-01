@@ -35,6 +35,8 @@ for string in list_of_strings:
         print(string)
 ```
 
+This "\s" are not required, and can be left out, here they just tighten the search patterned.<br>
+
 ### Resources
 
 A usefull [web-site](https://www.regex101.com) for practicing regex.
