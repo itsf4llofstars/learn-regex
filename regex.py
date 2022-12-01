@@ -41,10 +41,18 @@ def search_list_strings(list_strings, pattern) -> None:
 
 
 def main():
-    sta_ord = metars[-3]
-    print(sta_ord)
-    found = re.search(re.compile(r"KORD\s"), sta_ord)
+    # Search single string
+    sta_ord: str = "302351Z 27016G34KT 10SM KORD FEW036 M04/M11 A3018 RMK AO2"
+
+    found = re.search(re.compile(r"\sKORD\s"), sta_ord)
     print(found)
+
+    # ! Note: r"\sKORD\s" can be pre-compiled with: search_for = re.compile(r"\sKORD\s")
+
+    print()
+    if re.search(re.compile(r"KORD\s"), sta_ord):
+        print(sta_ord)
+
 
 if __name__ == "__main__":
     import sys
