@@ -41,18 +41,10 @@ def search_list_strings(list_strings, pattern) -> None:
 
 
 def main():
-    # compiles the regex KORD with a single space at the end
-    station_ord = re.compile(r"KORD\s")
-
-    # iterate through the strings searching for the regex string
-    # print only those regex's that are found
-    for station in metars:
-        if re.search(station_ord, station):
-            print(station)
-
-    # The above as a list comprehension
-    [print(station) for station in metars if re.search(station_ord, station)]
-
+    sta_ord = metars[-3]
+    print(sta_ord)
+    found = re.search(re.compile(r"KORD\s"), sta_ord)
+    print(found)
 
 if __name__ == "__main__":
     import sys
